@@ -12,31 +12,39 @@ function getComputerChoice () {
     return choice;
 };
 
-let computerSelection = getComputerChoice()
-
-//Step 2a - Create a prompt for user input which stores playerSelection (make case insensitive)
+//Step 2 - Create a prompt for user input which stores playerSelection (make case insensitive)
 function getPlayerChoice(){
     let choice = prompt('Choose:  "Rock", "Paper" or "Scissors"').toLowerCase();
     return choice;
 }
 
+let playerSelection = getPlayerChoice()
+let computerSelection = getComputerChoice()
+
+console.log(playerSelection)
+console.log(computerSelection)
+//let playerSelection = getPlayerChoice()
 //Step 2 - Create a function to play a round of rock, paper, scissors
 
 //note - always returns "This round is a Draw"...need to fix the if then code//
 //note - consider using switches for the different cases//
 
-
 function playRound (playerSelection, computerSelection){   
-    if (playerSelection === computerSelection) {
-        result = "This round is a Draw.";
-    } else if (playerSelection === "rock" && computerSelection === "scissors" || 
-        playerSelection === "paper" && computerSelection === "rock" ||
-        playerSelection === "scissors" && computerSelection === "paper") {
-        result = "You won this round.";
+    const player = playerSelection
+    const computer = computerSelection
+    if (player === computer) {
+        result = "This round is a draw."
+    } else if ((player === "rock" && computer === "paper")||
+        (player === "paper" && computer ==="scissors")||
+        (player==="scissors"&& computer==="rock")){
+        result = "You lost this round."
+    } else if ((player === "rock" && computer === "scissors")||
+        (player==="paper"&&computer==="rock")||
+        (player==="scissors"&&computer==="paper")) {
+        result = "You won this round."
     } else {
-        result = "You lost this round.";
+        result = "Undefined"
     }
-    return result;
 }
 
 //code for adding values to an array//
@@ -48,9 +56,9 @@ console.log(myArray)
 */
 
 //Console testing//
-console.log(getPlayerChoice())
-console.log (getComputerChoice())
-console.log(playRound())
+console.log(playerSelection)
+console.log (computerSelection)
+console.log(playRound(playerSelection, computerSelection))
 
 
 
