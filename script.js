@@ -19,7 +19,9 @@ let computerSelection = getComputerChoice()
 let playerSelection = prompt('Choose:  "Rock", "Paper" or "Scissors"').toLowerCase()
 
 //Step 2 - Create a function to play a round of rock, paper, scissors
-function playRound (playerSelection, getComputerChoice()){   
+
+//note - always returns "This round is a Draw"...need to fix the if then code//
+function playRound (playerSelection, computerSelection){   
     if (playerSelection === computerSelection) {
         result = "This round is a Draw.";
     } else if (playerSelection === "rock" && computerSelection === "scissors" || 
