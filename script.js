@@ -1,7 +1,6 @@
 //Step 1 - Create a function to have computer choose rock, paper, scissors//
 
 function getComputerChoice () {
-    let choice = ""
     let computerResult = Math.floor(Math.random()*3);
     if (computerResult === 0){
         choice = "rock";
@@ -16,11 +15,17 @@ function getComputerChoice () {
 let computerSelection = getComputerChoice()
 
 //Step 2a - Create a prompt for user input which stores playerSelection (make case insensitive)
-let playerSelection = prompt('Choose:  "Rock", "Paper" or "Scissors"').toLowerCase()
+function getPlayerChoice(){
+    let choice = prompt('Choose:  "Rock", "Paper" or "Scissors"').toLowerCase();
+    return choice;
+}
 
 //Step 2 - Create a function to play a round of rock, paper, scissors
 
 //note - always returns "This round is a Draw"...need to fix the if then code//
+//note - consider using switches for the different cases//
+
+
 function playRound (playerSelection, computerSelection){   
     if (playerSelection === computerSelection) {
         result = "This round is a Draw.";
@@ -34,10 +39,16 @@ function playRound (playerSelection, computerSelection){
     return result;
 }
 
-
+//code for adding values to an array//
+/*
+const myArray  = ['I', 'love', 'chocolate', 'frogs'];
+myArray.push('and oranges');
+//console.log(madeAString) => ['I', 'love', 'chocolate', 'frogs', 'and oranges']
+console.log(myArray)
+*/
 
 //Console testing//
-console.log(playerSelection)
+console.log(getPlayerChoice())
 console.log (getComputerChoice())
 console.log(playRound())
 
